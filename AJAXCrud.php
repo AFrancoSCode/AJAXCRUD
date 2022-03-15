@@ -81,7 +81,7 @@
 
         function editar(id){
         // Editar
-          fetch(`http://localhost/PruebaAPIrest/AJAXCrud/EditarContacto.php?id=${id}`, {
+          fetch(`http://localhost/AJAXCrud/EditarContacto.php?id=${id}`, {
               method: "GET"
           })
           .then(function(response){
@@ -135,7 +135,7 @@
 
         function seleccionar(){
         // Seleccionar
-          fetch(`http://localhost/PruebaAPIrest/AJAXCrud/Seleccionar.php`, {
+          fetch(`http://localhost/AJAXCrud/Seleccionar.php`, {
             method: "GET"
           })
           .then(function(response){
@@ -195,7 +195,7 @@
           $ciudad = $ciudad.replace(/ /g, '%20');
           $direccion = $direccion.replace(/ /g, '%20');
 
-          fetch(`http://localhost/PruebaAPIrest/AJAXCrud/CrearContacto.php?ciudad=${$ciudad}&direccion=${$direccion}&telefono=${$telefono}`, {
+          fetch(`http://localhost/AJAXCrud/CrearContacto.php?ciudad=${$ciudad}&direccion=${$direccion}&telefono=${$telefono}`, {
             method: "GET"
           })
           .then(function(response){
@@ -212,11 +212,12 @@
 
         function eliminar (id){
         // Eliminar
-          fetch(`http://localhost/PruebaAPIrest/AJAXCrud/BorrarContactos.php?id=${id}`,{
+          fetch(`http://localhost/AJAXCrud/BorrarContactos.php?id=${id}`,{
             method: "GET"
           })
           .then(function(response){
             if(response.ok){
+              borrarFormEditar(document.querySelector('.actualizar'));
               seleccionar();
             }else{
               return "Error";
@@ -232,7 +233,7 @@
           ciudad = ciudad.replace(/ /g, '%20');
           direccion = direccion.replace(/ /g, '%20');
 
-          fetch(`http://localhost/PruebaAPIrest/AJAXcrud/ActualizarContacto.php?id=${id}&ciudad=${ciudad}&direccion=${direccion}&telefono=${telefono}`, {
+          fetch(`http://localhost/AJAXcrud/ActualizarContacto.php?id=${id}&ciudad=${ciudad}&direccion=${direccion}&telefono=${telefono}`, {
             method: "GET"
           })
           .then(function(response){
