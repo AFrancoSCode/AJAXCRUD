@@ -4,7 +4,7 @@
         'localhost',
         'root',
         '',
-        'pruebas'
+        'contactos'
     );
 
 ?>
